@@ -1,0 +1,179 @@
+/* --- Global Styles & Fonts --- */
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif; /* Elegant font for wedding theme */
+    color: #fff; /* Default text color is white for the hero */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    
+    /* 1. Background Image (Replace with your link) */
+    background-image: url('https://images.pexels.com/photos/1769359/pexels-photo-1769359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* Center the Content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+/* 2. Gradient Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle dark gradient for text readability */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+}
+
+/* 3. Centered Content */
+.hero-content {
+    position: relative; /* Above the overlay */
+    z-index: 10;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 900px;
+}
+
+/* Headline & Colored Span */
+.hero-title {
+    font-size: 4.5rem; /* Large desktop size */
+    margin: 0 0 20px 0;
+    font-weight: 700;
+}
+
+.highlight {
+    color: #b8860b; /* Accent color: Dark Gold/Rose Gold */
+    font-style: italic;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #b8860b; /* Gold/Accent Color */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 2px solid #b8860b;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    border-color: #fff;
+    transform: scale(1.05); /* Subtle Animation/Hover Effect */
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20; /* Above the overlay and content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+/* Text Logo Styling */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 5px; /* Elegant spacing */
+    color: #fff;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-size: 1.1rem;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b8860b; /* Highlight on hover */
+}
+
+.menu-toggle {
+    display: none; /* Hidden on Desktop */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVENESS (Mobile/Tablet) --- */
+@media (max-width: 768px) {
+    /* Adjust Hero Content */
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    /* Collapse Nav Links */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        /* Hamburger menu styling */
+        display: none; /* Hide horizontal links */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Below the nav bar */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Full-width CTA button for better tapping on mobile */
+    .cta-button {
+        width: 100%;
+        max-width: 300px; /* Max width to keep it neat */
+        box-sizing: border-box;
+    }
+  }
+      
