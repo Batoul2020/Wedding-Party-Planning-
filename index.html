@@ -4,41 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Wedding Planners</title>
-    <script src="https://kit.fontawesome.com/4845bc06da.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
+    Dream Wedding Planners 
     <header class="hero-section" id="hero">
         <div class="hero-overlay"></div>
-        
         <nav class="navbar">
             <a href="#" class="logo">THE AGENCY</a>
-            <button class="menu-toggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+            
+            <button class="menu-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i> 
             </button>
-            <ul class="nav-links">
+            
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-
         <div class="hero-content">
-            <h1 class="hero-title">
-                Planning Your <span class="highlight">Unforgettable</span> Celebration
+            <h1 class="hero-title"> 
+                Planning Your <span class="highlight">Unforgettable</span> Celebration 
             </h1>
-            <p class="hero-subtitle">
-                Stress-free design and coordination for the wedding of your dreams.
+            <p class="hero-subtitle"> 
+                Stress-free design and coordination for the wedding of your dreams. 
             </p>
-            
-            <a href="#" class="cta-button">
-                Start Planning Your Dream Day
-            </a>
+            <a href="#" class="cta-button"> Start Planning Your Dream Day </a>
         </div>
     </header>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle'); // Button element
+            const navMenu = document.getElementById('nav-menu');     // UL list element
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    // Toggle the 'active' class to show/hide the menu via CSS
+                    navMenu.classList.toggle('active');
+
+                    // Optional UX improvement: Toggle the hamburger icon to an 'X'
+                    const icon = navToggle.querySelector('i');
+                    if (icon) {
+                        if (navMenu.classList.contains('active')) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times'); // 'fa-times' is the 'X' icon
+                        } else {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    
 </body>
 </html>
